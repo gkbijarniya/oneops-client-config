@@ -13,6 +13,7 @@
  */
 package com.oneops.client;
 
+import static com.oneops.client.OneOpsConfigReader.ONEOPS_DEFAULT_PROFILE;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
@@ -20,8 +21,6 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.oneops.client.OneOpsConfigReader;
 
 public class OneOpsConfigReaderTest {
 
@@ -35,7 +34,7 @@ public class OneOpsConfigReaderTest {
   @Test
   public void validateInliningFiles() throws Exception {
     OneOpsConfigReader reader = new OneOpsConfigReader();
-    Map<String,String> config = reader.read(config("config"), OneOpsConfigReader.ONEOPS_DEFAULT_PROFILE);
+    Map<String,String> config = reader.read(config("config"), ONEOPS_DEFAULT_PROFILE);
     assertEquals("https://localhost:9090", config.get("host"));
     assertEquals("bfd", config.get("organization"));
     assertEquals("BOO!!", config.get("api_key"));
