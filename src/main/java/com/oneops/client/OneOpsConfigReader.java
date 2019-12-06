@@ -24,12 +24,15 @@ import java.util.Map;
 public class OneOpsConfigReader {
 
   private static final String HOME = System.getProperty("user.home");
-  public static final File ONEOPS_CONFIG = new File(new File(HOME, ".oneops"), "config");
+  public static File ONEOPS_CONFIG = new File(new File(HOME, ".oneops"), "config");
   public static final File ONEOPS_CONFIG_BOO = new File(new File(HOME, ".boo"), "config");
   public static final String ONEOPS_CONFIG_MESSAGE = HOME + "/{.boo|.oneops}/config";
   public static final String ONEOPS_DEFAULT_PROFILE = "default";
 
   public File defaultConfig() {
+    if(System.getProperty("ONEOPS_CONFIG") != null) {
+      ONEOPS_CONFIG = new File(System.getProperty("ONEOPS_CONFIG"));
+    }
     if(ONEOPS_CONFIG.exists()) {
       return ONEOPS_CONFIG;      
     }

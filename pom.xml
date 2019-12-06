@@ -14,7 +14,7 @@
     <version>3</version>
   </parent>
   <artifactId>oneops-client-config</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.3.2</version>
   <description>Common configuration mechanism for OneOps clients.</description>
   <url>http://github.com/oneops/oneops-client-config</url>
   <licenses>

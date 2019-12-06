@@ -1,5 +1,7 @@
 # OneOps Client Config
 
+Note: Updated to accept Java system property option `-DONEOPS_CONFIG` with command `java -jar boo` to give a custome boo config file instead of `~/.boo/config`
+
 The OneOps client config library is a standard way for OneOps client applications to retrieve configuration for connecting to a OneOps instance. The default configuration location is `~/.oneops/config`, but we also support the `~/.boo/config` location for Boo users. A simple INI format is used:
 
 ```
